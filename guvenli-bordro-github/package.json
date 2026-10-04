@@ -1,0 +1,56 @@
+{
+  "name": "guvenli-bordro",
+  "productName": "Guvenli Bordro",
+  "version": "1.0.0",
+  "description": "Güvenli Bordro yönetim paneli masaüstü uygulaması",
+  "author": "Güvenli Hipermarketler",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win --publish never"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.guvenlihipermarket.bordro",
+    "productName": "Guvenli Bordro",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "package.json",
+      "build/icon.ico"
+    ],
+    "extraResources": [
+      {
+        "from": "helper/bin",
+        "to": "helper"
+      }
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Güvenli Bordro",
+      "artifactName": "GuvenliBordro-Kurulum-${version}.exe"
+    }
+  }
+}
