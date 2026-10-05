@@ -28,8 +28,8 @@ jobs:
         run: |
           New-Item -ItemType Directory -Force helper/bin | Out-Null
           & "$env:WINDIR\Microsoft.NET\Framework64\v4.0.30319\csc.exe" /nologo /codepage:65001 /target:winexe /optimize+ `
-            /win32icon:build/icon.ico /r:System.Windows.Forms.dll /r:System.Drawing.dll /r:System.Web.Extensions.dll `
-            /out:helper/bin/GuvenliBordroGonderici.exe helper/GuvenliBordro.cs
+            /win32icon:./build/icon.ico /r:System.Windows.Forms.dll /r:System.Drawing.dll /r:System.Web.Extensions.dll `
+            /out:./helper/bin/GuvenliBordroGonderici.exe ./helper/GuvenliBordro.cs
           if ($LASTEXITCODE -ne 0) { exit 1 }
 
       - name: Paketleri yukle
