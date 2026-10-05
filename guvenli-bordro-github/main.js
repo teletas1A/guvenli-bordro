@@ -6,7 +6,7 @@ const path = require('path');
 const fs = require('fs');
 const { spawn } = require('child_process');
 
-const DEFAULT_URL = 'http://guvenlihipermarketbordo.com/yonetim-k7x4q9m2/';
+const DEFAULT_URL = 'https://guvenlihipermarketbordo.com/yonetim-k7x4q9m2/';
 const PROTOCOL = 'guvenlibordro';
 const EXTERNAL_SCHEMES = ['whatsapp:', 'mailto:', 'tel:'];
 
